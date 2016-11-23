@@ -13,6 +13,12 @@ RUN wget -q https://languagetool.org/download/LanguageTool-$LANGUAGETOOL_VERSION
 	rm /tmp/LanguageTool-$LANGUAGETOOL_VERSION.zip && \
 	apk del wget
 
+# LINK env vars for convox
+ENV LINK_USERNAME convox
+ENV LINK_PASSWORD password
+ENV LINK_PATH /
+
+# expose the port
 EXPOSE 8081
 
 # Add the files
