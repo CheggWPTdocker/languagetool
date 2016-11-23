@@ -1,4 +1,4 @@
-FROM cheggwpt/java:latest
+FROM cheggwpt/java:0.0.1
 
 # BASICS - java 
 RUN	apk --update --no-cache add \
