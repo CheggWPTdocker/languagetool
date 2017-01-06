@@ -1,10 +1,9 @@
-FROM cheggwpt/java:latest
+FROM cheggwpt/java:0.0.5
 
-# BASICS - java 
+# add wget
 RUN	apk --update --no-cache add \
-	--virtual .base_package wget supervisor && \
-	rm -rf /var/cache/apk/* && \
-	mkdir -p /run/supervisord
+	--virtual .base_package wget && \
+	rm -rf /var/cache/apk/* 
 
 # LANGUAGE TOOLS
 ENV LANGUAGETOOL_VERSION 3.4
@@ -13,10 +12,10 @@ RUN wget -q https://languagetool.org/download/LanguageTool-$LANGUAGETOOL_VERSION
 	ln -s /usr/local/LanguageTool-$LANGUAGETOOL_VERSION /usr/local/languagetool && \
 	rm /tmp/LanguageTool-$LANGUAGETOOL_VERSION.zip
 
-EXPOSE 8081
+ENV LINK_PATH v2/check
 
 # Add the files
 COPY container_confs /
 
-ENTRYPOINT ["/entrypoint.sh"]
-CMD ["supervisor"]
+EXPOSE 8081
+
