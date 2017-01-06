@@ -1,4 +1,4 @@
-FROM cheggwpt/java:latest
+FROM cheggwpt/java:0.0.5
 
 # add wget
 RUN	apk --update --no-cache add \
