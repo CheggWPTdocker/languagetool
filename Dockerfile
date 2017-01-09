@@ -12,7 +12,7 @@ RUN wget -q https://languagetool.org/download/LanguageTool-$LANGUAGETOOL_VERSION
 	ln -s /usr/local/LanguageTool-$LANGUAGETOOL_VERSION /usr/local/languagetool && \
 	rm /tmp/LanguageTool-$LANGUAGETOOL_VERSION.zip
 
-ENV LINK_PATH v2/check
+ENV LINK_PATH /v2/check
 
 # Add the files
 COPY container_confs /
