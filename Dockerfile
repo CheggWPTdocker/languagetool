@@ -3,7 +3,7 @@ FROM cheggwpt/java:0.0.5
 # add wget
 RUN	apk --update --no-cache add \
 	--virtual .base_package wget && \
-	rm -rf /var/cache/apk/* 
+	rm -rf /var/cache/apk/*
 
 # LANGUAGE TOOLS
 ENV LANGUAGETOOL_VERSION 3.4
@@ -18,4 +18,3 @@ ENV LINK_PATH /v2/check
 COPY container_confs /
 
 EXPOSE 8081
-
